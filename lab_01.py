@@ -23,7 +23,7 @@ def day_of_year(year, month, day):
     counter_days = 0
 
     dm = days_in_month(year, month)
-    if dm == None or dm < day:
+    if dm == None or dm < day or day < 1:
         return None
 
     for i in range(1, month):
@@ -31,10 +31,10 @@ def day_of_year(year, month, day):
     return counter_days + day
 
 
-test_years = [2024, 2023, 2024, 2024, 2000, 2024, 2023, 1581]
-test_months = [2, 3, 3, 13, 2, 12, 12, 1]
-test_days = [1, 1, 1, 1, 30, 31, 31, 1]
-test_results = [32, 60, 61, None, None, 366, 365, None]
+test_years = [2024, 2023, 2024, 2024, 2000, 2024, 2023, 1581, 2024]
+test_months = [2, 3, 3, 13, 2, 12, 12, 1, 2]
+test_days = [1, 1, 1, 1, 30, 31, 31, 1, 0]
+test_results = [32, 60, 61, None, None, 366, 365, None, None]
 
 for i in range(len(test_years)):
     yr = test_years[i]
