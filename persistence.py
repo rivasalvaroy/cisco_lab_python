@@ -7,8 +7,7 @@ def persistence(n):
         for i in str(n):
             aux *= int(i)
         n = aux
-    else:
-        return counter
+    return counter
 
 
 print(persistence(39))
